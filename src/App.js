@@ -1,4 +1,5 @@
 import Form from './Form';
+//import Table from "./Table";
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
   return ( 
     <div className='main'>
       <h1>Expense Tracker</h1>
-      <Form />
+      <Form/>
+      {/* <Table/> */}
       
     </div>
    );
