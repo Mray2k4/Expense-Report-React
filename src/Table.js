@@ -10,7 +10,7 @@ function Table() {
                     <td>${date}</td>
                     <td>${description}</td>
                     <td>${category}</td>
-                    <td>${$ + amount}</td>
+                    <td>${amount}</td>
                     <td><input type="button" value="Delete" onclick="deleteRow(this)"/></td>
                 </tr>`;
 
