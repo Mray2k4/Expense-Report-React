@@ -17,11 +17,20 @@ body {
 
 tbody {
   background-color: aliceblue;
+  justify-content: center;
 }
 
-.main {
-    display: flex;
+form {
+  display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  ul {
     align-items: center;
   }
   
@@ -49,4 +58,9 @@ tbody {
 
 #data, input, button{
   height: 25px;
+}
+
+input {
+  text-align: center;
+  flex-direction: row;
 }
