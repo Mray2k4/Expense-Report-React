@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-body {
+form {
   background-color: lightgreen;
 }
 
@@ -28,6 +28,7 @@ form {
 
   div {
     text-align: center;
+    background-color: lightgreen;
   }
 
   ul {
@@ -62,5 +63,4 @@ form {
 
 input {
   text-align: center;
-  flex-direction: row;
 }

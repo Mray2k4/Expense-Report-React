@@ -5,28 +5,23 @@ function Form() {
   const [date, setDate] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('card');
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [items, setItems] = useState([])
 
+  console.log(items)
   function addButton(e) {
     e.preventDefault()
-
-
-
-    const inputs = { date, description, category, amount };
     const item = {
       id: Math.floor(Math.random() * 1000),
-      // value: { inputs }
-      // value: date, description, category, amount
       value: [date, description, category, amount]
-
-
-    };
+  };
 
     setItems(previousList => [...previousList, item]);
-    setDescription('');
+    // setDate('')
+    // setDescription('');
+    // setAmount('')
 
-    console.log(items)
+      console.log(items)
   };
 
   function deleteItem(id) {
@@ -35,8 +30,40 @@ function Form() {
   }
 
 
+  const itemList = items.map(item =>
+    <li key={item.id}>
+      {item.value} 
+      <button onClick={() => deleteItem(item.id)}>X</button>
+    </li>
+
+  // const itemDate = items.map(item =>
+  //   <li key={item.id}>
+  //     {item.value[0]} 
+  //     <button onClick={() => deleteItem(item.id)}>X</button>
+  //   </li>
+
+  // const itemDescription = items.map(item =>
+  //   <li key={item.id}>
+  //     {item.value[1]} 
+  //     <button onClick={() => deleteItem(item.id)}>X</button>
+  //   </li>
+
+  //        const itemCategory = items.map(item =>
+  //   <li key={item.id}>
+  //     {item.value[2]} 
+  //     <button onClick={() => deleteItem(item.id)}>X</button>
+  //   </li>                    
+  
+
+
+  
+  )
+
+
   return (
     <form onSubmit={addButton}>
+      <div>
+        Purchase Date:
       <input
         onChange={e => setDate(e.target.value)}
         type="date"
@@ -44,7 +71,10 @@ function Form() {
         value={date}
         required
       />
+        </div>
 
+      <div>
+        What did you buy:
       <input
         onChange={e => setDescription(e.target.value)}
         type="text"
@@ -52,6 +82,10 @@ function Form() {
         value={description}
         required
       />
+        </div>
+      
+      <div>
+        Payment Used:
       <select
         value={category}
         onChange={e => setCategory(e.target.value)}
@@ -60,6 +94,10 @@ function Form() {
         <option value="cash">cash</option>
         placeholder='Category'
       </select>
+        </div>
+
+      <div>
+        What was the Cost:
       <input
         onChange={e => setAmount(e.target.value)}
         type="number"
@@ -67,39 +105,44 @@ function Form() {
         value={amount}
         required
       />
+      </div>
+        
       <button>Add</button>
       {/* <p>{date}</p>
                 <p>{description}</p>
                 <p>{category}</p>
                 <p>{amount}</p> */}
 
-<table id='table'>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Amount</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td colspan="5">
-          <input class="place" type="text" placeholder="Your Items Will Appear Below"/>
-        </td>
-        
-      </tr>
-    </tbody>
-  </table>
+      <table id='table'>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5">
+              <input class="place" type="text" placeholder="Your Items Will Appear Below" />
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
 
       <ul>
-        {items.map(item => {
+        {/* {items.map(item => {
           return (
             <li key={item.id}>{item.value} <button onClick={() => deleteItem(item.id)}>X</button></li>
           )
         })}
-
+ */}
+        {itemList}
+        {/* {itemDate}
+        {itemDescription} */}
       </ul>
 
 
