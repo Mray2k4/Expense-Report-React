@@ -9,11 +9,14 @@ function Form() {
   const [items, setItems] = useState([])
 
   console.log(items)
+
   function addButton(e) {
     e.preventDefault()
     const item = {
       id: Math.floor(Math.random() * 1000),
       value: [date, description, category, amount]
+
+
   };
 
     setItems(previousList => [...previousList, item]);
@@ -21,48 +24,30 @@ function Form() {
     // setDescription('');
     // setAmount('')
 
-      console.log(items)
+      // console.log(items)
   };
 
   function deleteItem(id) {
-    const newArray = items.filter(item => item.id !== id);
-    setItems(newArray);
+    const deleteButton = items.filter(item => item.id !== id);
+    setItems(deleteButton);
   }
 
-
   const itemList = items.map(item =>
-    <li key={item.id}>
-      {item.value} 
-      <button onClick={() => deleteItem(item.id)}>X</button>
-    </li>
-
-  // const itemDate = items.map(item =>
-  //   <li key={item.id}>
-  //     {item.value[0]} 
-  //     <button onClick={() => deleteItem(item.id)}>X</button>
-  //   </li>
-
-  // const itemDescription = items.map(item =>
-  //   <li key={item.id}>
-  //     {item.value[1]} 
-  //     <button onClick={() => deleteItem(item.id)}>X</button>
-  //   </li>
-
-  //        const itemCategory = items.map(item =>
-  //   <li key={item.id}>
-  //     {item.value[2]} 
-  //     <button onClick={() => deleteItem(item.id)}>X</button>
-  //   </li>                    
-  
-
-
-  
+    <tr key={item.id}>
+      <td>{item.value[0]}</td>
+      <td>{item.value[1]}</td>
+      <td>{item.value[2]}</td>
+      <td>{item.value[3]}</td> 
+      <td><button onClick={() => deleteItem(item.id)}>X</button></td>
+    </tr>
   )
 
+  
+  
 
   return (
     <form onSubmit={addButton}>
-      <div>
+      <div className='container'>
         Purchase Date:
       <input
         onChange={e => setDate(e.target.value)}
@@ -71,9 +56,7 @@ function Form() {
         value={date}
         required
       />
-        </div>
 
-      <div>
         What did you buy:
       <input
         onChange={e => setDescription(e.target.value)}
@@ -82,21 +65,18 @@ function Form() {
         value={description}
         required
       />
-        </div>
-      
-      <div>
+
         Payment Used:
       <select
         value={category}
         onChange={e => setCategory(e.target.value)}
       >
-        <option value="card">card</option>
-        <option value="cash">cash</option>
+        <option value="card">Card</option>
+        <option value="cash">Cash</option>
+        <option value="crypto">Crypto</option>
         placeholder='Category'
       </select>
-        </div>
-
-      <div>
+       
         What was the Cost:
       <input
         onChange={e => setAmount(e.target.value)}
@@ -105,13 +85,11 @@ function Form() {
         value={amount}
         required
       />
+
+        <button>Add</button>
       </div>
         
-      <button>Add</button>
-      {/* <p>{date}</p>
-                <p>{description}</p>
-                <p>{category}</p>
-                <p>{amount}</p> */}
+  
 
       <table id='table'>
         <thead>
@@ -125,25 +103,18 @@ function Form() {
         </thead>
         <tbody>
           <tr>
-            <td colspan="5">
+            {/* <td colspan="5">
               <input class="place" type="text" placeholder="Your Items Will Appear Below" />
-            </td>
+            </td> */}
 
           </tr>
         </tbody>
+        <tbody>
+        {itemList}
+        </tbody>
       </table>
 
-      <ul>
-        {/* {items.map(item => {
-          return (
-            <li key={item.id}>{item.value} <button onClick={() => deleteItem(item.id)}>X</button></li>
-          )
-        })}
- */}
-        {itemList}
-        {/* {itemDate}
-        {itemDescription} */}
-      </ul>
+      
 
 
     </form>

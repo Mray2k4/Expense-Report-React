@@ -12,7 +12,6 @@ function App() {
    <div>
      <h1>Expense Report</h1>
      <Form/>
-     <Button>Test Button</Button>
      </div>
    );
 }

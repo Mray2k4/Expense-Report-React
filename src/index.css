@@ -57,6 +57,12 @@ form {
     
   }
 
+  .tr {
+    border: 1px solid;
+    text-align: center;
+    
+  }
+
 #data, input, button{
   height: 25px;
 }
