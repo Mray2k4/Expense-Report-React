@@ -17,14 +17,14 @@ function Form() {
       value: [date, description, category, amount]
 
 
-  };
+    };
 
     setItems(previousList => [...previousList, item]);
-    // setDate('')
-    // setDescription('');
-    // setAmount('')
+    setDate('')
+    setDescription('');
+    setAmount('')
 
-      // console.log(items)
+    // console.log(items)
   };
 
   function deleteItem(id) {
@@ -33,63 +33,63 @@ function Form() {
   }
 
   const itemList = items.map(item =>
-    <tr key={item.id}>
+    <tr key={item.id} className='userList'>
       <td>{item.value[0]}</td>
       <td>{item.value[1]}</td>
       <td>{item.value[2]}</td>
-      <td>{item.value[3]}</td> 
+      <td>${item.value[3]}</td>
       <td><button onClick={() => deleteItem(item.id)}>X</button></td>
     </tr>
   )
 
-  
-  
+
+
 
   return (
     <form onSubmit={addButton}>
-      <div className='container'>
+      <div className='list'>
         Purchase Date:
-      <input
-        onChange={e => setDate(e.target.value)}
-        type="date"
-        placeholder='date'
-        value={date}
-        required
-      />
+        <input
+          onChange={e => setDate(e.target.value)}
+          type="date"
+          placeholder='date'
+          value={date}
+          required
+        />
 
         What did you buy:
-      <input
-        onChange={e => setDescription(e.target.value)}
-        type="text"
-        placeholder='Description'
-        value={description}
-        required
-      />
+        <input
+          onChange={e => setDescription(e.target.value)}
+          type="text"
+          placeholder='Description'
+          value={description}
+          required
+        />
 
         Payment Used:
-      <select
-        value={category}
-        onChange={e => setCategory(e.target.value)}
-      >
-        <option value="card">Card</option>
-        <option value="cash">Cash</option>
-        <option value="crypto">Crypto</option>
-        placeholder='Category'
-      </select>
-       
+        <select
+          value={category}
+          onChange={e => setCategory(e.target.value)}
+        >
+          <option value="Card">Card</option>
+          <option value="Cash">Cash</option>
+          <option value="Crypto">Crypto</option>
+          placeholder='Category'
+        </select>
+
         What was the Cost:
-      <input
-        onChange={e => setAmount(e.target.value)}
-        type="number"
-        placeholder='Amount'
-        value={amount}
-        required
-      />
+        <input
+          onChange={e => setAmount(e.target.value)}
+          type="number"
+          placeholder='Amount'
+          value={amount}
+          required
+        />
 
         <button>Add</button>
       </div>
-        
-  
+
+
 
       <table id='table'>
         <thead>
@@ -100,21 +100,23 @@ function Form() {
             <th>Amount</th>
             <th></th>
           </tr>
+          {itemList}
         </thead>
+        
         <tbody>
           <tr>
             {/* <td colspan="5">
-              <input class="place" type="text" placeholder="Your Items Will Appear Below" />
+              <input className="place"  placeholder="Your Items Will Appear Below" />
             </td> */}
 
           </tr>
         </tbody>
         <tbody>
-        {itemList}
+          {/* {itemList} */}
         </tbody>
       </table>
 
-      
+
 
 
     </form>

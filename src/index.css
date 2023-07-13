@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-form {
+
+/* Old Code */
+/* form {
   background-color: lightgreen;
 }
 
@@ -20,15 +22,97 @@ tbody {
   justify-content: center;
 }
 
-form {
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  .container {
+    display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
 
   div {
     text-align: center;
     background-color: lightgreen;
+  }
+
+  ul {
+    align-items: center;
+  }
+  
+  .table {
+    
+    flex-direction: column;
+    justify-content: center;
+    border-collapse: collapse;
+    margin-top: 15px;
+    
+  }
+
+
+  
+  table td {
+    border: 1px solid;
+    text-align: center;
+  }
+  
+  table th {
+    background: lightblue;
+    padding: 4px 30px 4px 8px;
+    
+  }
+
+  .tr {
+    border: 1px solid;
+    text-align: center;
+    
+  }
+
+#data, input, button{
+  height: 25px;
+}
+
+input {
+  text-align: center;
+} */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form {
+  background-color: lightgreen;
+}
+
+tbody {
+  background-color: aliceblue;
+}
+
+form {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+  }
+
+  #table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userList {
+    background-color: aliceblue; 
+  }
+
+  div {
+    text-align: center;
+    background-color:lightgreen;
   }
 
   ul {
@@ -57,7 +141,7 @@ form {
     
   }
 
-  .tr {
+  tr {
     border: 1px solid;
     text-align: center;
     
