@@ -33,7 +33,7 @@ function Form() {
   }
 
   const itemList = items.map(item =>
-    <tr key={item.id} className='userList'>
+    <tr key={item.id} className='table-primary'>
       <td>{item.value[0]}</td>
       <td>{item.value[1]}</td>
       <td>{item.value[2]}</td>
@@ -91,7 +91,7 @@ function Form() {
 
 
 
-      <table id='table'>
+      <table className='table'>
         <thead>
           <tr>
             <th>Date</th>
@@ -104,15 +104,6 @@ function Form() {
         </thead>
         
         <tbody>
-          <tr>
-            {/* <td colspan="5">
-              <input className="place"  placeholder="Your Items Will Appear Below" />
-            </td> */}
-
-          </tr>
-        </tbody>
-        <tbody>
-          {/* {itemList} */}
         </tbody>
       </table>
 
