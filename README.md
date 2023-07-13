@@ -2,7 +2,7 @@
 
 Check it out [here](https://marque-expense-tracker-f12469da090e.herokuapp.com/)
 
-![Screenshot 2023-07-13 093127](https://github.com/Mray2k4/Expense-Report-React/assets/99221965/35a0ca4c-8c68-4b4a-a33e-f5dc3c3a5bf9)
+![Screenshot 2023-07-13 093440](https://github.com/Mray2k4/Expense-Report-React/assets/99221965/b4e25e39-9d73-4a71-a3c1-3d84920bf981)
 
 
 ## Summary
